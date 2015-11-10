@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-git2.min.js"></script>
+</head>
+<body>
+	Name: <input type="text" id="textInput" value="" placeholder="">
+
+	Hello: <span id="nameDiv"></span>
+
+	<script type="text/javascript">
+	$('#textInput').on('keyup', function(){
+		$('#nameDiv').html($('#textInput').val());
+	});
+
+
+	</script>
+</body>
+</html>
