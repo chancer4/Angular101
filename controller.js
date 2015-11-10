@@ -1,5 +1,18 @@
 angular.module('myApp',[]).controller('myController', function($scope){
-	$scope.items = [
+	
+	$scope.addPerson = function(){
+		$scope.students.push({name: $scope.newName, desc: $scope.newDesc});
+		$scope.newName = "";
+		$scope.newDesc = "";
+	}
+
+	$scope.removeStudent = function(studentToRemove){
+		var i = $scope.students.indexOf(studentToRemove)
+		$scope.students.splice(i,1); 
+
+		}
+
+	$scope.students = [
 		{
 			name : 'Freddy',
 			desc : 'the mucinex add'
