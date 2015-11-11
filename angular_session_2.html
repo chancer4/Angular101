@@ -14,25 +14,22 @@
 </head>
 <body ng-controller="myController">
 	
-<div id="filter">
-	<input ng-model="filterSearch" placeholder="Search">
-</div>
+	<div class="container">
+		<div class="row">
+			Search: <input ng-model="query" type="text">
+			<table>
+				<tr>
+					<th><a href="" ng-click="sortField = '-name'; reverse = !reverse">Name</a></th>
+					<th><a href="" ng-click="sortField = '-desc'; reverse = !reverse">desc</a></th>
+				</tr>
+				<tr ng-repeat="student in students | filter:query | orderBy:sortField:reverse">
+					<td>{{student.name}}</td>
+					<td>{{student.desc}}</td>
+				</tr>
+			</table>
 
-<div class="container">
-<div class="row">
-	<ul>
-		<li class="col-md-12" ng-repeat="person in students | filter:filterSearch | orderBy:'name'">
-			{{person.name}} : {{person.desc}}
-			<a class="col-md-12  btn btn-danger btn-xs" href="#" ng-click="removeStudent(person)">Remove</a>
-		</li>
-	</ul>	
-</div>
-</div>
-
-	<form ng-submit="addPerson()">
-		<input type="text" ng-model="newName">
-		<input type="text" ng-model="newDesc">
-		<input type="submit">
+		</div>
+	</div>
 
 </body>
 </html>
